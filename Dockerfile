@@ -1,6 +1,6 @@
 FROM tomcat:8.5
 
-MAINTAINER chris@cbeer.info
+MAINTAINER katherly@upenn.edu
 
 ENV FCREPO_VERSION 4.5.0
 
