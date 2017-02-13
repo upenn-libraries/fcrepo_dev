@@ -8,6 +8,7 @@ services:
       - '8080:8080'
     volumes:
       - '.:/fcrepo'
+      - '${LOCAL_DISPLAY}:/colenda_dirs'
     env_file:
       - '.env'
 
