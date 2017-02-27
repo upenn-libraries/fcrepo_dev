@@ -8,8 +8,6 @@ services:
       - '8080:8080'
     volumes:
       - '.:/fcrepo'
-    env_file:
-      - '.env'
 
 volumes:
   fcrepo:
