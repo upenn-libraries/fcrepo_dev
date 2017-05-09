@@ -2,15 +2,28 @@ version: '2'
 
 services:
 
-  fcrepo:
-    build: .
+  db:
+    image: 'mysql/mysql-server:5.7'
+    env_file: '.env'
     ports:
-      - '8080:8080'
+      - '3306:3306'
+    volumes:
+      - 'db:/var/lib/mysql'
+  fcrepo:
+    image: 'fcrepo_dev:latest'
+    depends_on:
+      - 'db'
+    links:
+      - 'db'
+    ports:
+     - '8080:8080'
     volumes:
       - '.:/fcrepo'
+    env_file: '.env'
 
 volumes:
   fcrepo:
+  db:
 
 
 
