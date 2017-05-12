@@ -2,7 +2,7 @@ FROM tomcat:8.5
 
 MAINTAINER katherly@upenn.edu
 
-ENV FCREPO_VERSION 4.5.0
+ENV FCREPO_VERSION 4.5.1
 
 EXPOSE 8080
 
