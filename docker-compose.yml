@@ -3,6 +3,7 @@ version: '2'
 services:
 
   db:
+    restart: 'unless-stopped'
     image: 'mysql/mysql-server:5.7'
     env_file: '.env'
     ports:
@@ -10,6 +11,7 @@ services:
     volumes:
       - 'db:/var/lib/mysql'
   fcrepo:
+    restart: 'unless-stopped'
     image: 'fcrepo_dev:latest'
     depends_on:
       - 'db'
@@ -19,6 +21,7 @@ services:
      - '8080:8080'
     volumes:
       - '.:/fcrepo'
+      - '${LOCAL_BACKUP}:${REMOTE_BACKUP}'
     env_file: '.env'
 
 volumes:
