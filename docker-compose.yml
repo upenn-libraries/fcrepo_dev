@@ -12,7 +12,7 @@ services:
       - 'db:/var/lib/mysql'
   fcrepo:
     restart: 'unless-stopped'
-    image: 'fcrepo_dev:latest'
+    image: 'quay.io/upennlibraries/fcrepo_dev:latest'
     depends_on:
       - 'db'
     links:
@@ -27,7 +27,3 @@ services:
 volumes:
   fcrepo:
   db:
-
-
-
-
